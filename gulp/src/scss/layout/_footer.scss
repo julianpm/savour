@@ -1,0 +1,20 @@
+.top-footer{
+	text-align: center;
+	margin:80px 0;
+	h2{
+		color:$text_grey;
+	}
+	p{
+		margin:10px 0 0 0;
+		text-transform: uppercase;
+		letter-spacing:2px;
+		color:$light_grey;
+	}
+}
+
+.bottom-footer-wrapper{
+	border-top:1px solid #e1e1e1;
+	p{
+		color:$light_grey;
+	}
+}
