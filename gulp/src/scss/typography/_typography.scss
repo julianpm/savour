@@ -3,6 +3,8 @@ body{
 }
 h1, h2, h3{
 	color:$main_grey;
+	letter-spacing:2px;
+	margin:0;
 }
 h1{
 	font-weight:900;
@@ -19,6 +21,9 @@ h3{
 p{
 	font-family:'Lora', serif;
 	color:$text_grey;
+	.top-footer &{
+		font-family:'Work Sans', sans-serif;
+	}
 }
 .italic{
 	font-style:italic;
