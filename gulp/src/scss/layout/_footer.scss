@@ -11,7 +11,7 @@
 
 .top-footer{
 	text-align: center;
-	margin:80px 0;
+	padding:50px 0;
 	h2{
 		color:$text_grey;
 	}
@@ -24,13 +24,20 @@
 
 .bottom-footer-wrapper{
 	border-top:1px solid #e1e1e1;
+	padding:10px 0;
 	.bottom-footer{
-		display: flex;
-		justify-content:space-between;
-		align-items:center;
+		@include breakpoint(large){
+			display: flex;
+			justify-content:space-between;
+			align-items:center;
+		}
 		p{
 			color:$light_grey;
-			margin:0;
+			margin-top:0;
+			text-align: center;
+			@include breakpoint(large){
+				margin:0;
+			}
 		}
 	}
 }
