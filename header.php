@@ -69,7 +69,7 @@
 		<div class="row">
 			<div class="columns small-12 bottom-nav">
 				<div class="site-branding">
-					<h2><?php esc_html_e( 'savor.', 'svr' ); ?></h2>
+					<h2><?php esc_html_e( 'savour.', 'svr' ); ?></h2>
 				</div><!-- .site-branding -->
 				<nav id="site-navigation" class="main-navigation" role="navigation">
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
