@@ -1,3 +1,14 @@
+.site-footer{
+	a{
+		color:$light_grey;
+		transition:0.5s;
+		text-decoration: none;
+		&:hover{
+			color:$main_grey;
+		}
+	}
+}
+
 .top-footer{
 	text-align: center;
 	margin:80px 0;
@@ -8,13 +19,18 @@
 		margin:10px 0 0 0;
 		text-transform: uppercase;
 		letter-spacing:2px;
-		color:$light_grey;
 	}
 }
 
 .bottom-footer-wrapper{
 	border-top:1px solid #e1e1e1;
-	p{
-		color:$light_grey;
+	.bottom-footer{
+		display: flex;
+		justify-content:space-between;
+		align-items:center;
+		p{
+			color:$light_grey;
+			margin:0;
+		}
 	}
 }
