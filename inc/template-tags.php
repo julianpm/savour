@@ -120,3 +120,17 @@ function svr_category_transient_flusher() {
 }
 add_action( 'edit_category', 'svr_category_transient_flusher' );
 add_action( 'save_post',     'svr_category_transient_flusher' );
+
+
+// PAGE HEADER
+function svr_page_header(){ ?>
+
+	<header class="page-header" style="background-image: url( <?php echo ( has_post_thumbnail() ? wp_get_attachment_url( get_post_thumbnail_id() ) : '' ); ?> ); ">
+		<div class="row">
+			<div class="columns small-12 page-header_content">
+				
+			</div>
+		</div>
+	</header>
+
+<?php }

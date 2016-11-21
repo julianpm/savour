@@ -13,11 +13,12 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php
-		while ( have_posts() ) : the_post(); ?>
+		while ( have_posts() ) : the_post();
 
+			// PAGE HEADER
+			svr_page_header();
 
-
-		<?php endwhile; // End of the loop.
+		endwhile; // End of the loop.
 		?>
 
 		</main><!-- #main -->
