@@ -26,6 +26,38 @@
 					<div class="columns small-12">
 						<div class="bottom-footer">
 							<p><?php echo esc_html_e( 'Copyright 2016 - Savour', 'svr' ); ?></p>
+							<nav class="social-nav">
+								<?php
+								$facebook = get_field( 'svr_facebook_link', 'options');
+								$pinterest = get_field( 'svr_pinterest_link', 'options');
+								$twitter = get_field( 'svr_twitter_link', 'options');
+								$instagram = get_field( 'svr_instagram_link', 'options'); ?>
+								<ul>
+									<?php if ( $facebook ){ ?>
+										<li>
+											<a href="<?php echo esc_url( $facebook ); ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+										</li>
+									<?php }
+									if ( $pinterest ){ ?>
+										<li>
+											<a href="<?php echo esc_url( $pinterest ); ?>"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+										</li>
+									<?php }
+									if ( $twitter ){ ?>
+										<li>
+											<a href="<?php echo esc_url( $twitter ); ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+										</li>
+									<?php }
+									if ( $instagram ){ ?>
+										<li>
+											<a href="<?php echo esc_url( $instagram ); ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+										</li>
+									<?php } ?>
+									<li>
+										<a href="#">lets.eat@savour.com</a>
+									</li>
+								</ul>
+							</nav>
 						</div>
 					</div>
 				</div>

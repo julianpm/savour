@@ -25,37 +25,44 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="top-nav-wrapper">
 			<div class="row">
-				<div class="columns small-12 top-nav">
-					<ul>
-						<li>
-							<a href="#">
-								<i class="fa fa-facebook" aria-hidden="true"></i>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<i class="fa fa-pinterest-p" aria-hidden="true"></i>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<i class="fa fa-twitter" aria-hidden="true"></i>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<i class="fa fa-instagram" aria-hidden="true"></i>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<i class="fa fa-search" aria-hidden="true"></i>
-							</a>
-						</li>
-						<li>
-							+1 443 753 3223
-						</li>
-					</ul>
+				<div class="columns small-12">
+					<nav class="social-nav">
+						<?php
+						$facebook = get_field( 'svr_facebook_link', 'options');
+						$pinterest = get_field( 'svr_pinterest_link', 'options');
+						$twitter = get_field( 'svr_twitter_link', 'options');
+						$instagram = get_field( 'svr_instagram_link', 'options'); ?>
+						<ul>
+							<?php if ( $facebook ){ ?>
+								<li>
+									<a href="<?php echo esc_url( $facebook ); ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+								</li>
+							<?php }
+							if ( $pinterest ){ ?>
+								<li>
+									<a href="<?php echo esc_url( $pinterest ); ?>"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
+								</li>
+							<?php }
+							if ( $twitter ){ ?>
+								<li>
+									<a href="<?php echo esc_url( $twitter ); ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+								</li>
+							<?php }
+							if ( $instagram ){ ?>
+								<li>
+									<a href="<?php echo esc_url( $instagram ); ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+								</li>
+							<?php } ?>
+							<li class="search">
+								<a href="#">
+									<i class="fa fa-search" aria-hidden="true"></i>
+								</a>
+							</li>
+							<li class="number">
+								+1 443 753 3223
+							</li>
+						</ul>
+					</nav>
 				</div>
 			</div>
 		</div>
@@ -64,7 +71,6 @@
 				<div class="site-branding">
 					<h2><?php esc_html_e( 'savor.', 'svr' ); ?></h2>
 				</div><!-- .site-branding -->
-
 				<nav id="site-navigation" class="main-navigation" role="navigation">
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 				</nav><!-- #site-navigation -->
