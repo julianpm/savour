@@ -140,3 +140,13 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Options Page
+ */
+if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page('Theme Options');
+	acf_add_options_page('CTA Options');
+
+}
