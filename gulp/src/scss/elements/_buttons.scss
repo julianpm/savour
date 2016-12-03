@@ -1,0 +1,12 @@
+.btn{
+	color:$main_grey;
+	background: $secondary_grey;
+	text-decoration: none;
+	text-transform: uppercase;
+	padding:15px 20px;
+	font-weight: bold;
+	&.btn_dark{
+		background: $main_grey;
+		color:white;
+	}
+}
