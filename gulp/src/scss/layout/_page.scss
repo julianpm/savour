@@ -5,4 +5,19 @@
 	@include breakpoint(large){
 		height:800px;
 	}
+	.page-header_content{
+		margin-top:100px;
+		h1{
+			background: $secondary_grey;
+			display: inline-block;
+			text-transform: uppercase;
+			padding:0 20px;
+			&:first-of-type{
+				margin-bottom:15px;
+			}
+		}
+	}
+	.page-header_link{
+		margin-top:70px;
+	}
 }
