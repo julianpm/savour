@@ -28,3 +28,14 @@ p{
 .italic{
 	font-style:italic;
 }
+.section-padding{
+	padding:2% 0;
+	@include breakpoint(large){
+		padding:5% 0;
+	}
+}
+section{
+	&.beige{
+		background: $beige;
+	}
+}
