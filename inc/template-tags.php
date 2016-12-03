@@ -128,9 +128,55 @@ function svr_page_header(){ ?>
 	<header class="page-header" style="background-image: url( <?php echo ( has_post_thumbnail() ? wp_get_attachment_url( get_post_thumbnail_id() ) : '' ); ?> ); ">
 		<div class="row">
 			<div class="columns small-12 page-header_content">
-				
+				<?php the_content(); ?>
+			</div>
+			<div class="columns small-12 page-header_link">
+				<a class="btn" href="#"><?php echo esc_html_e( 'Reserve Your Table', 'svr' ); ?></a>
 			</div>
 		</div>
 	</header>
 
 <?php }
+
+
+// FRONT PAGE WELCOME
+function svr_welcome(){
+	if ( function_exists( 'get_field' ) ){
+		$welcome = get_field( 'svr_front_page_welcome_repeater' );
+
+		if ( $welcome ){ ?>
+
+			<section class="beige section-padding welcome">
+				<?php
+				$welcome_header = get_field( 'svr_front_page_welcome_header' ); ?>
+				<div class="row">
+					<div class="columns small-12">
+						<h2><?php echo esc_html( $welcome_header ); ?></h2>
+					</div>
+
+					<?php foreach ( $welcome as $welcome_item ){
+						$welcome_info = $welcome_item['svr_front_page_welcome_repeater_info']; ?>
+						
+						<div class="columns small-12 large-4">
+							<p><?php echo esc_html( $welcome_info ); ?></p>
+						</div>
+
+					<?php } ?>
+					<div class="columns small-12 welcome_link">
+						<a class="btn btn_dark" href="#"><?php echo esc_html_e( 'Read Our Mission', 'svr' ); ?></a>
+					</div>
+				</div>
+			</section>
+
+		<?php }
+	}
+}
+
+
+
+
+
+
+
+
+

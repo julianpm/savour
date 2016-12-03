@@ -18,6 +18,9 @@ get_header(); ?>
 			// PAGE HEADER
 			svr_page_header();
 
+			// WELCOME
+			svr_welcome();
+
 		endwhile; // End of the loop.
 		?>
 
