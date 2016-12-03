@@ -21,6 +21,12 @@ get_header(); ?>
 			// WELCOME
 			svr_welcome();
 
+			// HOURS OF OPERATION
+			svr_hours();
+
+			// MENUS
+			svr_menus();
+
 		endwhile; // End of the loop.
 		?>
 

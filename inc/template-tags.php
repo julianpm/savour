@@ -173,10 +173,72 @@ function svr_welcome(){
 }
 
 
+// FRONT PAGE HOURS OF OPERATION
+function svr_hours(){
+	if ( function_exists( 'get_field' ) ){
+		$hours = get_field( 'svr_front_page_hours', 4 );
+
+		if ( $hours ){ ?>
+
+			<section class="section-padding">
+				<div class="row">
+					<div class="columns small-12 card-header">
+						<p><?php echo esc_html_e( 'Hours of Operation', 'svr' ); ?></p>
+					</div>
+
+					<?php foreach ( $hours as $hour ){
+						$hours_days = $hour['svr_front_page_hours_days']; 
+						$hours_times = $hour['svr_front_page_hours_times']; ?>
+
+						<div class="columns small-12 large-4 card">
+							<?php if ( $hours_days ){ ?>
+								<p><?php echo esc_html( $hours_days ); ?></p>
+							<?php }
+							if ( $hours_times ){ ?>
+								<p><?php echo esc_html( $hours_times ); ?></p>
+							<?php } ?>
+						</div>
+						
+					<?php } ?>
+
+				</div>
+			</section>
+
+		<?php }
+	}
+}
 
 
+// FRONT PAGE MENUS
+function svr_menus(){
+	if ( function_exists( 'get_field' ) ){
+		$menus = get_field( 'svr_front_page_menus' );
 
+		if ( $menus ){ ?>
 
+			<section class="row">
 
+				<?php foreach ( $menus as $menu ){
+					$menu_image = $menu['svr_front_page_menus_image'];
+					$menu_title = $menu['svr_front_page_menus_title'];
+					$menu_link = $menu['svr_front_page_menus_link']; ?>
 
+					<div class="columns small-12 large-6 box">
+						<img src="<?php echo esc_url( $menu_image['url'] ); ?>" alt="<?php echo $menu_image['alt']; ?>">
+						<div class="box-inner">
+							<?php if ( $menu_title ){ ?>
+								<h3><?php echo esc_html( $menu_title ); ?></h3>	
+							<?php }
+							if ( $menu_link ){ ?>
+								<a class="btn" href="<?php echo esc_html( $menu_link ); ?>"><?php echo esc_html_e( 'See Menu', 'svr' ); ?></a>
+							<?php } ?>
+						</div>
+					</div>
 
+				<?php } ?>
+
+			</section>
+
+		<?php }
+	}
+}
