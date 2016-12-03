@@ -23,6 +23,13 @@
 	justify-content:space-between;
 	align-items:center;
 	margin:20px 0;
+	.site-branding{
+		a{
+			@include font-size(40);
+			color:$main_grey;
+			font-weight:bold;
+		}
+	}
 	ul{
 		margin:0;
 		padding:0;
