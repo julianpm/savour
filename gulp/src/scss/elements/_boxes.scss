@@ -1,0 +1,14 @@
+.box{
+	position:relative;
+	.box-inner{
+		position:absolute;
+		top:40px;
+		left:70px;
+		h3{
+			text-transform: uppercase;
+			background: $secondary_grey;
+			padding:10px;
+			margin-bottom:25px;
+		}
+	}
+}

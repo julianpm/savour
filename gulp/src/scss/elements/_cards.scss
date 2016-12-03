@@ -1,0 +1,16 @@
+.card-header{
+	border:1px solid #e1e1e1;
+	text-align: center;
+	text-transform: uppercase;
+	p{
+		font-family:'Work Sans', sans-serif;
+	}
+}
+.card{
+	border:1px solid #e1e1e1;
+	text-align: center;
+	p:first-of-type{
+		color:$main_grey;
+		font-family:'Work Sans', sans-serif;
+	}
+}
