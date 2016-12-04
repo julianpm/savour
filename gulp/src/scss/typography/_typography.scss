@@ -8,15 +8,25 @@ h1, h2, h3{
 }
 h1{
 	font-weight:900;
-	@include font-size(60);
+	@include font-size(30);
+	@include breakpoint(large){
+		@include font-size(60);
+	}
 }
 h2{
 	font-weight:700;
-	@include font-size(40);
+	line-height:1.2;
+	@include font-size(24);
+	@include breakpoint(large){
+		@include font-size(40);
+	}
 }
 h3{
 	font-weight:900;
-	@include font-size(26);
+	@include font-size(20);
+	@include breakpoint(large){
+		@include font-size(26);
+	}
 }
 p{
 	font-family:'Lora', serif;
@@ -29,13 +39,16 @@ p{
 	font-style:italic;
 }
 .section-padding{
-	padding:2% 0;
+	padding:5% 0;
 	@include breakpoint(large){
-		padding:5% 0;
+		padding:3% 0;
 	}
 }
 section{
 	&.beige{
 		background: $beige;
+	}
+	&.darkgrey{
+		background: $main_grey;
 	}
 }
