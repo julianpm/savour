@@ -139,6 +139,81 @@ function svr_page_header(){ ?>
 <?php }
 
 
+// SUBSCRIBE CTA
+function svr_subscribe(){
+	if ( function_exists( 'get_field' ) ){
+		$subscribe_header = get_field( 'svr_subscribe_cta_header', 'options');
+		$subscribe_text = get_field( 'svr_subscribe_cta_text', 'options');
+		$subscribe_link = get_field( 'svr_subscribe_cta_link', 'options');
+
+		if ( $subscribe_link ){ ?>
+		
+			<section class="darkgrey section-padding cta">
+				<div class="row">
+					<div class="columns small-12">
+						<?php if ( $subscribe_header ){ ?>
+							<p><?php echo esc_html( $subscribe_header ); ?></p>
+						<?php }
+						if ( $subscribe_text ){ ?>
+							<h3><?php echo esc_html( $subscribe_text ); ?></h3>
+						<?php } ?>
+						<div class="cta-link">
+							<a class="btn btn_grey" href="<?php echo esc_url( $subscribe_link ); ?>"><?php echo esc_html_e( 'Subscribe' ); ?></a>
+						</div>
+					</div>
+				</div>	
+			
+			</section>
+
+		<?php }
+	}
+}
+
+
+// HOURS OF OPERATION CTA
+function svr_hours(){
+	if ( function_exists( 'get_field' ) ){
+		$hours = get_field( 'svr_front_page_hours', 'options' );
+
+		if ( $hours ){ ?>
+
+			<section class="section-padding">
+				<div class="row">
+					<div class="columns small-12 card-header">
+						<p><?php echo esc_html_e( 'Hours of Operation', 'svr' ); ?></p>
+					</div>
+
+					<?php foreach ( $hours as $hour ){
+						$hours_days = $hour['svr_front_page_hours_days']; 
+						$hours_times = $hour['svr_front_page_hours_times']; ?>
+
+						<div class="columns small-12 large-4">
+							<div class="card">
+								<?php if ( $hours_days ){ ?>
+									<p><?php echo esc_html( $hours_days ); ?></p>
+								<?php }
+								if ( $hours_times ){ ?>
+									<p><?php echo esc_html( $hours_times ); ?></p>
+								<?php } ?>
+							</div>
+						</div>
+
+					<?php } ?>
+					<?php if ( is_page_template( 'templates/contact.php' ) ){ ?>
+						<div class="columns small-12 large-6">
+							<i class="fa fa-home" aria-hidden="true"></i>
+						</div>
+
+					<?php } ?>
+
+				</div>
+			</section>
+
+		<?php }
+	}
+}
+
+
 // FRONT PAGE WELCOME
 function svr_welcome(){
 	if ( function_exists( 'get_field' ) ){
@@ -173,42 +248,6 @@ function svr_welcome(){
 }
 
 
-// FRONT PAGE HOURS OF OPERATION
-function svr_hours(){
-	if ( function_exists( 'get_field' ) ){
-		$hours = get_field( 'svr_front_page_hours', 4 );
-
-		if ( $hours ){ ?>
-
-			<section class="section-padding">
-				<div class="row">
-					<div class="columns small-12 card-header">
-						<p><?php echo esc_html_e( 'Hours of Operation', 'svr' ); ?></p>
-					</div>
-
-					<?php foreach ( $hours as $hour ){
-						$hours_days = $hour['svr_front_page_hours_days']; 
-						$hours_times = $hour['svr_front_page_hours_times']; ?>
-
-						<div class="columns small-12 large-4 card">
-							<?php if ( $hours_days ){ ?>
-								<p><?php echo esc_html( $hours_days ); ?></p>
-							<?php }
-							if ( $hours_times ){ ?>
-								<p><?php echo esc_html( $hours_times ); ?></p>
-							<?php } ?>
-						</div>
-						
-					<?php } ?>
-
-				</div>
-			</section>
-
-		<?php }
-	}
-}
-
-
 // FRONT PAGE MENUS
 function svr_menus(){
 	if ( function_exists( 'get_field' ) ){
@@ -216,7 +255,7 @@ function svr_menus(){
 
 		if ( $menus ){ ?>
 
-			<section class="row">
+			<section class="row section-padding">
 
 				<?php foreach ( $menus as $menu ){
 					$menu_image = $menu['svr_front_page_menus_image'];
