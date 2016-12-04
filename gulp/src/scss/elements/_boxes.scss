@@ -1,5 +1,6 @@
 .box{
 	position:relative;
+	margin-bottom:20px;
 	.box-inner{
 		position:absolute;
 		top:40px;
@@ -9,6 +10,7 @@
 			background: $secondary_grey;
 			padding:10px;
 			margin-bottom:25px;
+			text-align: center;
 		}
 	}
 }
