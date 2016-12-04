@@ -1,12 +1,14 @@
 .welcome{
 	h2{
 		text-align: center;
-		width: 70%;
-		margin:0 auto 20px auto;
 		text-transform: uppercase;
+		@include breakpoint(large){
+			width: 70%;
+			margin:0 auto 20px auto;
+		}
 	}
 	.welcome_link{
 		text-align: center;
-		margin-top:40px;
+		padding:20px 0;
 	}
 }
