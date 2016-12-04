@@ -541,8 +541,8 @@ button {
   float: left;
   padding-left: 1.25rem;
   padding-right: 1.25rem; }
-  .column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
-    float: right; }
+  // .column:last-child:not(:first-child), .columns:last-child:not(:first-child) {
+  //   float: right; }
   .column.end:last-child:last-child, .end.columns:last-child:last-child {
     float: left; }
 
