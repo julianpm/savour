@@ -27,6 +27,9 @@ get_header(); ?>
 			// MENUS
 			svr_menus();
 
+			// SUBSCRIBE CTA
+			svr_subscribe();
+
 		endwhile; // End of the loop.
 		?>
 
