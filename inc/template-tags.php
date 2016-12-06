@@ -123,20 +123,38 @@ add_action( 'save_post',     'svr_category_transient_flusher' );
 
 
 // PAGE HEADER
-function svr_page_header(){ ?>
+function svr_page_header(){ 
 
-	<header class="page-header" style="background-image: url( <?php echo ( has_post_thumbnail() ? wp_get_attachment_url( get_post_thumbnail_id() ) : '' ); ?> ); ">
-		<div class="row">
-			<div class="columns small-12 page-header_content">
-				<?php the_content(); ?>
-			</div>
-			<div class="columns small-12 page-header_link">
-				<a class="btn" href="#"><?php echo esc_html_e( 'Reserve Your Table', 'svr' ); ?></a>
-			</div>
-		</div>
-	</header>
+	if ( has_post_thumbnail() ){ ?>
 
-<?php }
+		<header class="page-header" style="background-image: url( <?php echo ( has_post_thumbnail() ? wp_get_attachment_url( get_post_thumbnail_id() ) : '' ); ?> ); ">
+			<div class="row">
+				<div class="columns small-12 page-header_content">
+					<?php the_content(); ?>
+				</div>
+				<div class="columns small-12 page-header_link">
+					<a class="btn" href="#"><?php echo esc_html_e( 'Reserve Your Table', 'svr' ); ?></a>
+				</div>
+			</div>
+		</header>
+
+	<?php } else{ ?>
+
+		<header class="page-header-simple section-padding">
+			<div class="row">
+				<div class="columns small-12">
+					<p class="italic"><?php echo esc_html_e( "What's for", 'svr' ); ?></p>
+					<h1><?php the_title(); ?></h1>
+					<div class="border"></div>
+					<?php if ( is_page( 'dinner' ) ){ ?>
+						<p>lkjasdfljkasdlfkjasdf</p>
+					<?php } ?>
+				</div>
+			</div>
+		</header>
+
+	<?php }
+}
 
 
 // SUBSCRIBE CTA
@@ -269,7 +287,7 @@ function svr_menus(){
 								<h3><?php echo esc_html( $menu_title ); ?></h3>	
 							<?php }
 							if ( $menu_link ){ ?>
-								<a class="btn" href="<?php echo esc_html( $menu_link ); ?>"><?php echo esc_html_e( 'See Menu', 'svr' ); ?></a>
+								<a class="btn" href="<?php echo esc_url( home_url( $menu_link ) ); ?>"><?php echo esc_html_e( 'See Menu', 'svr' ); ?></a>
 							<?php } ?>
 						</div>
 					</div>
