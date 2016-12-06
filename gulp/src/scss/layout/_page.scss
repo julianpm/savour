@@ -26,3 +26,22 @@
 		margin-top:70px;
 	}
 }
+
+.page-header-simple{
+	background: $main_grey;
+	text-align: center;
+	p{
+		color:$beige;
+		margin:0;
+	}
+	h1{
+		color:white;
+		text-transform: uppercase;
+	}
+}
+
+.border{
+	border-bottom:2px solid white;
+	width: 20px;
+	margin:10px auto 0 auto;
+}
