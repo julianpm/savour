@@ -146,9 +146,6 @@ function svr_page_header(){
 					<p class="italic"><?php echo esc_html_e( "What's for", 'svr' ); ?></p>
 					<h1><?php the_title(); ?></h1>
 					<div class="border"></div>
-					<?php if ( is_page( 'dinner' ) ){ ?>
-						<p>lkjasdfljkasdlfkjasdf</p>
-					<?php } ?>
 				</div>
 			</div>
 		</header>
@@ -208,7 +205,7 @@ function svr_hours(){
 						<div class="columns small-12 large-4">
 							<div class="card">
 								<?php if ( $hours_days ){ ?>
-									<p><?php echo esc_html( $hours_days ); ?></p>
+									<p class="card-inner-header"><?php echo esc_html( $hours_days ); ?></p>
 								<?php }
 								if ( $hours_times ){ ?>
 									<p><?php echo esc_html( $hours_times ); ?></p>
@@ -217,9 +214,35 @@ function svr_hours(){
 						</div>
 
 					<?php } ?>
-					<?php if ( is_page_template( 'templates/contact.php' ) ){ ?>
+					<?php if ( is_page_template( 'templates/contact.php' ) ){
+						$contact_visit = get_field( 'svr_contact_visit' );
+						$contact_address = get_field( 'svr_contact_address' );
+						$contact_email = get_field( 'svr_contact_email' );
+						$contact_info = get_field( 'svr_contact_info' ); ?>
+						
 						<div class="columns small-12 large-6">
-							<i class="fa fa-home" aria-hidden="true"></i>
+							<div class="card card-margin">
+								<i class="fa fa-home" aria-hidden="true"></i>
+								<?php if ( $contact_visit ){ ?>
+									<p class="card-inner-header"><?php echo esc_html( $contact_visit ); ?></p>
+								<?php } ?>
+								<?php if ( $contact_address ){ ?>
+									<?php echo wp_kses_post( $contact_address ); ?>
+								<?php } ?>
+								<div class="border"></div>
+							</div>
+						</div>
+						<div class="columns small-12 large-6">
+							<div class="card card-margin">
+								<i class="fa fa-phone" aria-hidden="true"></i>
+								<?php if ( $contact_email ){ ?>
+									<p class="card-inner-header"><?php echo esc_html( $contact_email ); ?></p>
+								<?php } ?>
+								<?php if ( $contact_info ){ ?>
+									<?php echo wp_kses_post( $contact_info ); ?>
+								<?php } ?>
+								<div class="border"></div>
+							</div>
 						</div>
 
 					<?php } ?>
