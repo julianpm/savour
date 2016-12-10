@@ -54,7 +54,7 @@
 										</li>
 									<?php } ?>
 									<li>
-										<a href="#">lets.eat@savour.com</a>
+										<a href="mailto:lets.eat@savour.com"><?php echo esc_html_e( 'lets.eat@savour.com', 'svr' ); ?></a>
 									</li>
 								</ul>
 							</nav>
