@@ -8,14 +8,27 @@
 .card{
 	border:1px solid #e1e1e1;
 	text-align: center;
+	padding:40px;
+	i{
+		color:$light_grey;
+		@include font-size(40);
+		margin-bottom:10px;
+	}
 	p{
-		&:first-of-type{
-			color:$main_grey;
-			font-family:'Work Sans', sans-serif;
-			margin-bottom:0;
-		}
-		&:last-of-type{
-			margin-top:5px;
-		}
+		margin:0;
+	}
+	.card-inner-header{
+		text-transform: uppercase;
+		font-weight: bold;
+		color:$main_grey;
+		font-family:'Work Sans', sans-serif;
+		margin-bottom:10px;
+	}
+	&.card-margin{
+		margin-top:20px;
+	}
+	.border{
+		width: 20px;
+		border-bottom:2px solid $light_grey;
 	}
 }
