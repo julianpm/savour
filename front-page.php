@@ -21,14 +21,14 @@ get_header(); ?>
 			// WELCOME
 			svr_welcome();
 
-			// HOURS OF OPERATION
-			svr_hours();
+			// HOURS OF OPERATION CTA
+			svr_hours_cta();
 
 			// MENUS
 			svr_menus();
 
 			// SUBSCRIBE CTA
-			svr_subscribe();
+			svr_subscribe_cta();
 
 		endwhile; // End of the loop.
 		?>
