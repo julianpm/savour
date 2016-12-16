@@ -15,8 +15,14 @@ get_header(); ?>
 			<?php
 			while ( have_posts() ) : the_post();
 
-				// HOURS OF OPERATION
-				svr_hours();
+				// PAGE HEADER
+				svr_page_header();
+
+				// HOURS OF OPERATION CTA
+				svr_hours_cta();
+
+				// JOIN US CTA
+				svr_join_us_cta();
 
 			endwhile; // End of the loop.
 			?>
