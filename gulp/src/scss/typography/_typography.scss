@@ -1,12 +1,15 @@
 body{
 	font-family:'Work Sans', sans-serif;
 }
-h1, h2, h3{
+h2, h3{
 	color:$main_grey;
 	letter-spacing:2px;
 	margin:0;
 }
 h1{
+	letter-spacing:2px;
+	margin:0;
+	color:white;
 	font-weight:900;
 	@include font-size(30);
 	@include breakpoint(large){
