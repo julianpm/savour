@@ -123,17 +123,27 @@ add_action( 'save_post',     'svr_category_transient_flusher' );
 
 
 // PAGE HEADER
-function svr_page_header(){ 
+function svr_page_header(){
+	$header_subtitle = get_field( 'svr_page_header_subtitle', 'svr' );
+	$header_icon = get_field( 'svr_page_header_icon', 'svr' );
 
 	if ( has_post_thumbnail() ){ ?>
 
 		<header class="page-header" style="background-image: url( <?php echo ( has_post_thumbnail() ? wp_get_attachment_url( get_post_thumbnail_id() ) : '' ); ?> ); ">
 			<div class="row">
-				<div class="columns small-12 page-header_content">
-					<?php the_content(); ?>
-				</div>
-				<div class="columns small-12 page-header_link">
-					<a class="btn" href="#"><?php echo esc_html_e( 'Reserve Your Table', 'svr' ); ?></a>
+				<div class="columns small-12">
+					<div class="page-header_content">
+						<?php if ( $header_subtitle ){ ?>
+							<p class="italic"><?php echo esc_html( $header_subtitle ); ?></p>
+						<?php }
+						the_content();
+						if ( is_front_page() ){ ?>
+							<a class="btn" href="#"><?php echo esc_html_e( 'Reserve Your Table', 'svr' ); ?></a>
+						<?php } ?>
+						<?php if ( $header_icon ){ ?>
+							<i class="fa fa-<?php echo esc_html( $header_icon ); ?>" aria-hidden="true"></i>
+						<?php }	?>
+					</div>
 				</div>
 			</div>
 		</header>
@@ -143,7 +153,9 @@ function svr_page_header(){
 		<header class="page-header-simple section-padding">
 			<div class="row">
 				<div class="columns small-12">
-					<p class="italic"><?php echo esc_html_e( "What's for", 'svr' ); ?></p>
+					<?php if ( $header_subtitle ){ ?>
+						<p class="italic"><?php echo esc_html( $header_subtitle ); ?></p>
+					<?php } ?>
 					<h1><?php the_title(); ?></h1>
 					<div class="border"></div>
 				</div>
@@ -155,7 +167,7 @@ function svr_page_header(){
 
 
 // SUBSCRIBE CTA
-function svr_subscribe(){
+function svr_subscribe_cta(){
 	if ( function_exists( 'get_field' ) ){
 		$subscribe_header = get_field( 'svr_subscribe_cta_header', 'options');
 		$subscribe_text = get_field( 'svr_subscribe_cta_text', 'options');
@@ -173,7 +185,9 @@ function svr_subscribe(){
 							<h3><?php echo esc_html( $subscribe_text ); ?></h3>
 						<?php } ?>
 						<div class="cta-link">
-							<a class="btn btn_grey" href="<?php echo esc_url( $subscribe_link ); ?>"><?php echo esc_html_e( 'Subscribe' ); ?></a>
+							<a class="btn btn_grey" href="<?php echo esc_url( $subscribe_link ); ?>">
+								<?php echo esc_html_e( 'Subscribe', 'svr' ); ?>
+							</a>
 						</div>
 					</div>
 				</div>	
@@ -186,7 +200,7 @@ function svr_subscribe(){
 
 
 // HOURS OF OPERATION CTA
-function svr_hours(){
+function svr_hours_cta(){
 	if ( function_exists( 'get_field' ) ){
 		$hours = get_field( 'svr_front_page_hours', 'options' );
 
@@ -251,6 +265,31 @@ function svr_hours(){
 			</section>
 
 		<?php }
+	}
+}
+
+
+// JOIN US CTA
+function svr_join_us_cta(){
+	if ( function_exists( 'get_field' ) ){
+		$join_us_header = get_field( 'svr_join_us_cta_header', 'options' );
+		$join_us_link = get_field( 'svr_join_us_cta_link', 'options' );
+
+		if ( $join_us_header ){ ?>
+
+			<section class="cta section-padding">
+				
+				<h3><?php echo esc_html( $join_us_header ); ?></h3>
+				<?php if ( $join_us_link ){ ?>
+					<a href="<?php echo esc_html( $join_us_link ); ?>">
+						<?php echo esc_html_e( 'Make A Reservation', 'svr' ); ?>
+					</a>
+				<?php } ?>
+
+			</section>
+
+		<?php }
+
 	}
 }
 
