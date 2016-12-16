@@ -3,27 +3,23 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	display: flex;
-	align-items:center;
+	align-items: center;
+	text-align: center;
+	text-transform: uppercase;
 	@include breakpoint(large){
-		height:800px;
-		display: block;
+		height:600px;
 	}
 	.page-header_content{
-		@include breakpoint(large){
-			margin-top:100px;
-		}
 		h1{
-			background: $secondary_grey;
-			display: inline-block;
-			text-transform: uppercase;
-			padding:0 20px;
-			&:first-of-type{
-				margin-bottom:15px;
+			&:last-of-type{
+				margin-bottom:50px;
 			}
 		}
-	}
-	.page-header_link{
-		margin-top:70px;
+		i{
+			background: $secondary_grey;
+			padding:15px;
+			@include font-size(24);
+		}
 	}
 }
 
@@ -38,10 +34,9 @@
 		color:white;
 		text-transform: uppercase;
 	}
-}
-
-.border{
-	border-bottom:2px solid white;
-	width: 20px;
-	margin:10px auto 0 auto;
+	.border{
+		border-bottom:2px solid white;
+		width: 20px;
+		margin:10px auto 0 auto;
+	}
 }
