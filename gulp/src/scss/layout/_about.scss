@@ -1,0 +1,31 @@
+.team-header{
+	text-align: center;
+	background: $secondary_grey;
+	padding:15px 0;
+	p{
+		margin:0;
+		text-transform: uppercase;
+		&:first-of-type{
+			font-weight: bold;
+			color:$main_grey;
+		}
+	}
+}
+
+.team-info{
+	background: white;
+	padding:30px;
+	text-align: center;
+	p{
+		margin:5px 0 0 0;
+	}
+	a{
+		text-decoration: none;
+		color:$light_grey;
+		margin:0 5px;
+		transition:0.5s;
+		&:hover{
+			color:$main_grey;
+		}
+	}
+}
