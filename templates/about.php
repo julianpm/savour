@@ -21,6 +21,9 @@ get_header(); ?>
 				// VALUES
 				svr_values();
 
+				// OUR TEAM
+				svr_team();
+
 			endwhile; // End of the loop.
 			?>
 

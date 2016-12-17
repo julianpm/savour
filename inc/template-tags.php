@@ -425,3 +425,71 @@ function svr_values(){
 		<?php }
 	}
 }
+
+
+// ABOUT PAGE TEAM
+function svr_team(){
+	if ( function_exists( 'get_field' ) ){
+		$team = get_field( 'svr_team' );
+
+		if ( $team ){ ?>
+
+			<section class="beige section-padding">
+				<div class="row">
+					<p class="card-header"><?php echo esc_html_e( 'Meet Our Team', 'svr' ); ?></p>
+					
+					<?php foreach ( $team as $team_member ){
+						$team_image = $team_member['svr_team_image'];
+						$team_name = $team_member['svr_team_name'];
+						$team_title = $team_member['svr_team_title'];
+						$team_info = $team_member['svr_team_info']; ?>
+
+						<div class="columns small-12 large-3">
+							<div class="item">
+								<?php if ( $team_image ){ ?>
+									<img src="<?php echo esc_url( $team_image['url'] ); ?>" alt="<?php echo $team_image['alt']; ?>">
+								<?php }
+								if ( $team_name && $team_title ){ ?>
+									<div class="team-header">
+										<p><?php echo esc_html( $team_name ); ?></p>
+										<p><?php echo esc_html( $team_title ); ?></p>
+									</div>
+								<?php } ?>
+
+								<?php $team_social = $team_member['svr_team_social'];
+
+								if ( $team_info || $team_social ){ ?>
+									
+									<div class="team-info">
+										
+										<?php foreach ( $team_social as $team_social_item ){
+											$team_social_item_icon = $team_social_item['svr_team_social_icon'];
+											$team_social_item_link = $team_social_item['svr_team_social_link'];
+
+											if ( $team_social_item_link ){ ?>
+												<a href="<?php echo esc_url( $team_social_item_link ); ?>">
+													<i class="fa fa-<?php echo esc_html( $team_social_item_icon ); ?>" aria-hidden="true"></i>
+												</a>
+											<?php }
+
+										}
+										echo wp_kses_post( $team_info ); ?>
+										<div class="border"></div>
+
+									</div>
+									
+								<?php } ?>
+
+
+
+							</div>
+						</div>
+
+					<?php } ?>
+
+				</div>
+			</section>
+
+		<?php }
+	}
+}
