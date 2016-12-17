@@ -16,4 +16,17 @@
 	.cta-link{
 		padding:30px 0 20px 0;
 	}
+	&.cta-flex{
+		.columns{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			text-align: left;
+			h3{
+				width: auto;
+				margin:0;
+			}
+		}
+		
+	}
 }
