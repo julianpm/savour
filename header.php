@@ -66,6 +66,7 @@
 				</div>
 			</div>
 		</div>
+		<?php get_search_form(); ?>
 		<div class="row">
 			<div class="columns small-12 bottom-nav">
 				<div class="site-branding">
