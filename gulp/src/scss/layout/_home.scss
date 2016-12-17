@@ -1,4 +1,10 @@
 .welcome{
+	p{
+		text-align: center;
+		@include breakpoint(large){
+			text-align: left;
+		}
+	}
 	h2{
 		text-align: center;
 		text-transform: uppercase;
