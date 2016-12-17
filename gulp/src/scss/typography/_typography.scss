@@ -35,7 +35,7 @@ h3{
 p{
 	font-family:'Lora', serif;
 	color:$text_grey;
-	.top-footer &, &.form-header{
+	.top-footer &, &.form-header, .team-header &{
 		font-family:'Work Sans', sans-serif;
 	}
 }
@@ -54,6 +54,11 @@ p{
 }
 .item{
 	margin-bottom:20px;
+}
+.border{
+	width: 20px;
+	border-bottom:2px solid $light_grey;
+	margin:20px auto 0 auto;
 }
 section{
 	&.beige{

@@ -3,6 +3,7 @@
 	text-transform: uppercase;
 	font-family:'Work Sans', sans-serif;
 	font-weight: bold;
+	margin-bottom:20px;
 }
 .card{
 	border:1px solid #e1e1e1;
@@ -22,10 +23,5 @@
 		color:$main_grey;
 		font-family:'Work Sans', sans-serif;
 		margin-bottom:10px;
-	}
-	.border{
-		width: 20px;
-		border-bottom:2px solid $light_grey;
-		margin:20px auto 0 auto;
 	}
 }
