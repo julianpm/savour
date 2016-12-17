@@ -331,27 +331,27 @@ function svr_welcome(){
 
 
 // FRONT PAGE MENUS
-function svr_menus(){
+function svr_home_menus_cta(){
 	if ( function_exists( 'get_field' ) ){
-		$menus = get_field( 'svr_front_page_menus' );
+		$home_menus = get_field( 'svr_front_page_menus' );
 
-		if ( $menus ){ ?>
+		if ( $home_menus ){ ?>
 
 			<section class="row section-padding">
 
-				<?php foreach ( $menus as $menu ){
-					$menu_image = $menu['svr_front_page_menus_image'];
-					$menu_title = $menu['svr_front_page_menus_title'];
-					$menu_link = $menu['svr_front_page_menus_link']; ?>
+				<?php foreach ( $home_menus as $home_menu ){
+					$home_menu_image = $home_menu['svr_front_page_menus_image'];
+					$home_menu_title = $home_menu['svr_front_page_menus_title'];
+					$home_menu_link = $home_menu['svr_front_page_menus_link']; ?>
 
 					<div class="columns small-12 large-6 box item">
-						<img src="<?php echo esc_url( $menu_image['url'] ); ?>" alt="<?php echo $menu_image['alt']; ?>">
+						<img src="<?php echo esc_url( $home_menu_image['url'] ); ?>" alt="<?php echo $home_menu_image['alt']; ?>">
 						<div class="box-inner">
-							<?php if ( $menu_title ){ ?>
-								<h3><?php echo esc_html( $menu_title ); ?></h3>	
+							<?php if ( $home_menu_title ){ ?>
+								<h3><?php echo esc_html( $home_menu_title ); ?></h3>	
 							<?php }
-							if ( $menu_link ){ ?>
-								<a class="btn" href="<?php echo esc_url( home_url( $menu_link ) ); ?>"><?php echo esc_html_e( 'See Menu', 'svr' ); ?></a>
+							if ( $home_menu_link ){ ?>
+								<a class="btn" href="<?php echo esc_url( home_url( $home_menu_link ) ); ?>"><?php echo esc_html_e( 'See Menu', 'svr' ); ?></a>
 							<?php } ?>
 						</div>
 					</div>
@@ -491,5 +491,45 @@ function svr_team(){
 			</section>
 
 		<?php }
+	}
+}
+
+
+// MENU PAGE MENUS
+function svr_menus_cta(){
+	if ( function_exists( 'get_field' ) ){
+		$menus = get_field( 'svr_menu' );
+
+		if ( $menus ){ ?>
+
+			<section class="beige menus">
+				
+				<?php foreach( $menus as $menu ){
+					$menu_image = $menu['svr_menu_image'];
+					$menu_title = $menu['svr_menu_title'];
+					$menu_link = $menu['svr_menu_link'];
+
+					if ( $menu_image ){ ?>
+
+						<div class="box">
+							<img src="<?php echo esc_url( $menu_image['url'] ); ?>" alt="<?php echo $menu_image['alt']; ?>">
+							<div class="box-inner">
+								<?php if ( $menu_title ){ ?>
+									<h3><?php echo esc_html( $menu_title ); ?></h3>	
+								<?php }
+								if ( $menu_link ){ ?>
+									<a class="btn" href="<?php echo esc_url( home_url( $menu_link ) ); ?>"><?php echo esc_html_e( 'See Menu', 'svr' ); ?></a>
+								<?php } ?>
+							</div>
+						</div>
+
+					<?php } ?>
+				
+				<?php } ?>
+
+			</section>
+
+		<?php }
+
 	}
 }
