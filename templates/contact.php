@@ -21,6 +21,9 @@ get_header(); ?>
 				// HOURS OF OPERATION CTA
 				svr_hours_cta();
 
+				// CONTACT FORM
+				svr_contact();
+
 				// JOIN US CTA
 				svr_join_us_cta();
 
