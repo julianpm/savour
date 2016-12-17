@@ -124,8 +124,8 @@ add_action( 'save_post',     'svr_category_transient_flusher' );
 
 // PAGE HEADER
 function svr_page_header(){
-	$header_subtitle = get_field( 'svr_page_header_subtitle', 'svr' );
-	$header_icon = get_field( 'svr_page_header_icon', 'svr' );
+	$header_subtitle = get_field( 'svr_page_header_subtitle' );
+	$header_icon = get_field( 'svr_page_header_icon' );
 
 	if ( has_post_thumbnail() ){ ?>
 
@@ -277,15 +277,17 @@ function svr_join_us_cta(){
 
 		if ( $join_us_header ){ ?>
 
-			<section class="cta section-padding">
-				
-				<h3><?php echo esc_html( $join_us_header ); ?></h3>
-				<?php if ( $join_us_link ){ ?>
-					<a href="<?php echo esc_html( $join_us_link ); ?>">
-						<?php echo esc_html_e( 'Make A Reservation', 'svr' ); ?>
-					</a>
-				<?php } ?>
-
+			<section class="cta cta-flex section-padding darkgrey">
+				<div class="row">
+					<div class="columns small-12">
+						<h3><?php echo esc_html( $join_us_header ); ?></h3>
+						<?php if ( $join_us_link ){ ?>
+							<a class="btn btn_grey" href="<?php echo esc_html( $join_us_link ); ?>">
+								<?php echo esc_html_e( 'Make A Reservation', 'svr' ); ?>
+							</a>
+						<?php } ?>
+					</div>
+				</div>
 			</section>
 
 		<?php }
@@ -359,5 +361,27 @@ function svr_menus(){
 			</section>
 
 		<?php }
+	}
+}
+
+
+// CONTACT PAGE FORM
+function svr_contact(){
+	if ( function_exists( 'get_field' ) ){
+		$contact_form_header = get_field( 'svr_contact_form_header' );
+
+		if ( $contact_form_header ){ ?>
+
+			<section class="beige section-padding form">
+				<div class="row">
+					<div class="columns small-12">
+						<p class="form-header"><?php echo esc_html( $contact_form_header ); ?></p>
+						<?php echo do_shortcode( '[contact-form-7 id="85" title="Contact Form"]' ); ?>
+					</div>
+				</div>
+			</section>
+
+		<?php }
+
 	}
 }
