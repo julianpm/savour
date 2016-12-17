@@ -18,6 +18,9 @@ get_header(); ?>
 				// PAGE HEADER
 				svr_page_header();
 
+				// MENUS CTA
+				svr_menus_cta();
+
 			endwhile; // End of the loop.
 			?>
 
