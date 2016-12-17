@@ -166,39 +166,6 @@ function svr_page_header(){
 }
 
 
-// SUBSCRIBE CTA
-function svr_subscribe_cta(){
-	if ( function_exists( 'get_field' ) ){
-		$subscribe_header = get_field( 'svr_subscribe_cta_header', 'options');
-		$subscribe_text = get_field( 'svr_subscribe_cta_text', 'options');
-		$subscribe_link = get_field( 'svr_subscribe_cta_link', 'options');
-
-		if ( $subscribe_link ){ ?>
-		
-			<section class="darkgrey section-padding cta">
-				<div class="row">
-					<div class="columns small-12">
-						<?php if ( $subscribe_header ){ ?>
-							<p><?php echo esc_html( $subscribe_header ); ?></p>
-						<?php }
-						if ( $subscribe_text ){ ?>
-							<h3><?php echo esc_html( $subscribe_text ); ?></h3>
-						<?php } ?>
-						<div class="cta-link">
-							<a class="btn btn_grey" href="<?php echo esc_url( $subscribe_link ); ?>">
-								<?php echo esc_html_e( 'Subscribe', 'svr' ); ?>
-							</a>
-						</div>
-					</div>
-				</div>	
-			
-			</section>
-
-		<?php }
-	}
-}
-
-
 // HOURS OF OPERATION CTA
 function svr_hours_cta(){
 	if ( function_exists( 'get_field' ) ){
@@ -208,9 +175,7 @@ function svr_hours_cta(){
 
 			<section class="section-padding">
 				<div class="row">
-					<div class="columns small-12 card-header">
-						<p><?php echo esc_html_e( 'Hours of Operation', 'svr' ); ?></p>
-					</div>
+					<p class="card-header"><?php echo esc_html_e( 'Hours of Operation', 'svr' ); ?></p>
 
 					<?php foreach ( $hours as $hour ){
 						$hours_days = $hour['svr_front_page_hours_days']; 
@@ -262,6 +227,39 @@ function svr_hours_cta(){
 					<?php } ?>
 
 				</div>
+			</section>
+
+		<?php }
+	}
+}
+
+
+// SUBSCRIBE CTA
+function svr_subscribe_cta(){
+	if ( function_exists( 'get_field' ) ){
+		$subscribe_header = get_field( 'svr_subscribe_cta_header', 'options');
+		$subscribe_text = get_field( 'svr_subscribe_cta_text', 'options');
+		$subscribe_link = get_field( 'svr_subscribe_cta_link', 'options');
+
+		if ( $subscribe_link ){ ?>
+		
+			<section class="darkgrey section-padding cta">
+				<div class="row">
+					<div class="columns small-12">
+						<?php if ( $subscribe_header ){ ?>
+							<p><?php echo esc_html( $subscribe_header ); ?></p>
+						<?php }
+						if ( $subscribe_text ){ ?>
+							<h3><?php echo esc_html( $subscribe_text ); ?></h3>
+						<?php } ?>
+						<div class="cta-link">
+							<a class="btn btn_grey" href="<?php echo esc_url( $subscribe_link ); ?>">
+								<?php echo esc_html_e( 'Subscribe', 'svr' ); ?>
+							</a>
+						</div>
+					</div>
+				</div>	
+			
 			</section>
 
 		<?php }
@@ -385,5 +383,45 @@ function svr_contact(){
 
 		<?php }
 
+	}
+}
+
+
+// ABOUT PAGE VALUES
+function svr_values(){
+	if ( function_exists( 'get_field' ) ){
+		$values = get_field( 'svr_values' );
+
+		if ( $values ){ ?>
+
+			<section class="section-padding">
+				<p class="card-header"><?php echo esc_html_e( 'Our Core Values', 'svr' ); ?></p>
+				<div class="row row-flex">
+					
+					<?php foreach ( $values as $value ){
+						$value_icon = $value['svr_values_icon'];
+						$value_header = $value['svr_values_header'];
+						$value_text = $value['svr_values_text']; ?>
+
+						<div class="columns small-12 large-6">
+							<div class="card item">
+								<?php if ( $value_icon ){ ?>
+									<i class="fa fa-<?php echo esc_html( $value_icon ); ?>" aria-hidden="true"></i>
+								<?php }
+								if ( $value_header ){ ?>
+									<p class="card-inner-header"><?php echo esc_html( $value_header ); ?></p>
+								<?php }
+								if ( $value_text ){
+									echo wp_kses_post( $value_text );	
+								} ?>
+							</div>
+						</div>
+
+					<?php } ?>
+
+				</div>
+			</section>
+
+		<?php }
 	}
 }
