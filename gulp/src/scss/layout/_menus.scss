@@ -1,0 +1,10 @@
+.menus{
+	@include breakpoint(large){
+		display: flex;
+	}
+	.box{
+		img{
+			width: 100%;
+		}
+	}
+}
