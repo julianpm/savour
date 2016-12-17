@@ -15,6 +15,12 @@
 				margin-bottom:50px;
 			}
 		}
+		p{
+			text-transform: none;
+			@include font-size(20);
+			color:$beige;
+			margin-top:0;
+		}
 		i{
 			background: $secondary_grey;
 			padding:15px;
