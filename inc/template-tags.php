@@ -337,7 +337,7 @@ function svr_home_menus_cta(){
 
 		if ( $home_menus ){ ?>
 
-			<section class="row section-padding">
+			<section class="row section-padding" id="our-menus">
 
 				<?php foreach ( $home_menus as $home_menu ){
 					$home_menu_image = $home_menu['svr_front_page_menus_image'];
