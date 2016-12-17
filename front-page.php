@@ -25,7 +25,7 @@ get_header(); ?>
 			svr_hours_cta();
 
 			// MENUS
-			svr_menus();
+			svr_home_menus_cta();
 
 			// SUBSCRIBE CTA
 			svr_subscribe_cta();
