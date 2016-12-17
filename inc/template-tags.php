@@ -217,7 +217,7 @@ function svr_hours_cta(){
 						$hours_times = $hour['svr_front_page_hours_times']; ?>
 
 						<div class="columns small-12 large-4">
-							<div class="card">
+							<div class="card item">
 								<?php if ( $hours_days ){ ?>
 									<p class="card-inner-header"><?php echo esc_html( $hours_days ); ?></p>
 								<?php }
@@ -235,7 +235,7 @@ function svr_hours_cta(){
 						$contact_info = get_field( 'svr_contact_info' ); ?>
 						
 						<div class="columns small-12 large-6">
-							<div class="card card-margin">
+							<div class="card item">
 								<i class="fa fa-home" aria-hidden="true"></i>
 								<?php if ( $contact_visit ){ ?>
 									<p class="card-inner-header"><?php echo esc_html( $contact_visit ); ?></p>
@@ -247,7 +247,7 @@ function svr_hours_cta(){
 							</div>
 						</div>
 						<div class="columns small-12 large-6">
-							<div class="card card-margin">
+							<div class="card item">
 								<i class="fa fa-phone" aria-hidden="true"></i>
 								<?php if ( $contact_email ){ ?>
 									<p class="card-inner-header"><?php echo esc_html( $contact_email ); ?></p>
@@ -275,17 +275,19 @@ function svr_join_us_cta(){
 		$join_us_header = get_field( 'svr_join_us_cta_header', 'options' );
 		$join_us_link = get_field( 'svr_join_us_cta_link', 'options' );
 
-		if ( $join_us_header ){ ?>
+		if ( $join_us_link ){ ?>
 
 			<section class="cta cta-flex section-padding darkgrey">
 				<div class="row">
 					<div class="columns small-12">
-						<h3><?php echo esc_html( $join_us_header ); ?></h3>
-						<?php if ( $join_us_link ){ ?>
+						<?php if ( $join_us_header ){ ?>
+							<h3><?php echo esc_html( $join_us_header ); ?></h3>	
+						<?php } ?>
+						<div class="cta-link">
 							<a class="btn btn_grey" href="<?php echo esc_html( $join_us_link ); ?>">
 								<?php echo esc_html_e( 'Make A Reservation', 'svr' ); ?>
 							</a>
-						<?php } ?>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -344,7 +346,7 @@ function svr_menus(){
 					$menu_title = $menu['svr_front_page_menus_title'];
 					$menu_link = $menu['svr_front_page_menus_link']; ?>
 
-					<div class="columns small-12 large-6 box">
+					<div class="columns small-12 large-6 box item">
 						<img src="<?php echo esc_url( $menu_image['url'] ); ?>" alt="<?php echo $menu_image['alt']; ?>">
 						<div class="box-inner">
 							<?php if ( $menu_title ){ ?>
