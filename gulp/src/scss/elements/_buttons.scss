@@ -6,11 +6,27 @@
 	padding:15px 20px;
 	font-weight: bold;
 	text-align: center;
-	&.btn_dark{
+	transition:0.5s;
+	&:hover{
 		background: $main_grey;
 		color:white;
 	}
+	&.btn_dark{
+		background: $main_grey;
+		color:white;
+		border:2px solid transparent;
+		&:hover{
+			background: white;
+			color:$main_grey;
+			border:2px solid $main_grey;
+		}
+	}
 	&.btn_grey{
 		background: $secondary_grey;
+		border:2px solid transparent;
+		&:hover{
+			background: $main_grey;
+			border:2px solid white;
+		}
 	}
 }
