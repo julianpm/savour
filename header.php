@@ -75,7 +75,16 @@
 				<nav id="site-navigation" class="main-navigation" role="navigation">
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 				</nav><!-- #site-navigation -->
+				<a class="toggle-nav" href="#">
+					<i class="fa fa-bars" aria-hidden="true"></i>
+				</a>
 			</div>
+		</div>
+		<div class="flyout-nav">
+			<a class="flyout-close" href="#">
+				<i class="fa fa-times" aria-hidden="true"></i>
+			</a>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 		</div>
 	</header><!-- #masthead -->
 
