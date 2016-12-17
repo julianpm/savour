@@ -1,5 +1,6 @@
 body{
 	font-family:'Work Sans', sans-serif;
+	letter-spacing: 1px;
 }
 h2, h3{
 	color:$main_grey;
@@ -34,7 +35,7 @@ h3{
 p{
 	font-family:'Lora', serif;
 	color:$text_grey;
-	.top-footer &{
+	.top-footer &, &.form-header{
 		font-family:'Work Sans', sans-serif;
 	}
 }
