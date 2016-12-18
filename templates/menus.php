@@ -24,6 +24,9 @@ get_header(); ?>
 				// MENUS CTA
 				svr_menus_cta();
 
+				// COME SIT CTA
+				svr_come_sit_cta();
+
 			endwhile; // End of the loop.
 			?>
 
