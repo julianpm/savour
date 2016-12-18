@@ -346,15 +346,17 @@ function svr_home_menus_cta(){
 						$home_menu_title = $home_menu['svr_front_page_menus_title'];
 						$home_menu_link = $home_menu['svr_front_page_menus_link']; ?>
 
-						<div class="columns small-12 large-6 box item">
-							<img src="<?php echo esc_url( $home_menu_image['url'] ); ?>" alt="<?php echo $home_menu_image['alt']; ?>">
-							<div class="box-inner">
-								<?php if ( $home_menu_title ){ ?>
-									<h3><?php echo esc_html( $home_menu_title ); ?></h3>	
-								<?php }
-								if ( $home_menu_link ){ ?>
-									<a class="btn" href="<?php echo esc_url( home_url( $home_menu_link ) ); ?>"><?php echo esc_html_e( 'See Menu', 'svr' ); ?></a>
-								<?php } ?>
+						<div class="columns small-12 large-6">
+							<div class="box item">
+								<img src="<?php echo esc_url( $home_menu_image['url'] ); ?>" alt="<?php echo $home_menu_image['alt']; ?>">
+								<div class="box-inner">
+									<?php if ( $home_menu_title ){ ?>
+										<h3><?php echo esc_html( $home_menu_title ); ?></h3>	
+									<?php }
+									if ( $home_menu_link ){ ?>
+										<a class="btn" href="<?php echo esc_url( home_url( $home_menu_link ) ); ?>"><?php echo esc_html_e( 'See Menu', 'svr' ); ?></a>
+									<?php } ?>
+								</div>
 							</div>
 						</div>
 
