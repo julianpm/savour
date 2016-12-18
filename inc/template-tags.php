@@ -337,27 +337,30 @@ function svr_home_menus_cta(){
 
 		if ( $home_menus ){ ?>
 
-			<section class="row section-padding" id="our-menus">
+			<section class="beige section-padding" id="our-menus">
+				<div class="row">
+					<p class="card-header"><?php echo esc_html_e( 'Our Menus', 'svr' ); ?></p>
 
-				<?php foreach ( $home_menus as $home_menu ){
-					$home_menu_image = $home_menu['svr_front_page_menus_image'];
-					$home_menu_title = $home_menu['svr_front_page_menus_title'];
-					$home_menu_link = $home_menu['svr_front_page_menus_link']; ?>
+					<?php foreach ( $home_menus as $home_menu ){
+						$home_menu_image = $home_menu['svr_front_page_menus_image'];
+						$home_menu_title = $home_menu['svr_front_page_menus_title'];
+						$home_menu_link = $home_menu['svr_front_page_menus_link']; ?>
 
-					<div class="columns small-12 large-6 box item">
-						<img src="<?php echo esc_url( $home_menu_image['url'] ); ?>" alt="<?php echo $home_menu_image['alt']; ?>">
-						<div class="box-inner">
-							<?php if ( $home_menu_title ){ ?>
-								<h3><?php echo esc_html( $home_menu_title ); ?></h3>	
-							<?php }
-							if ( $home_menu_link ){ ?>
-								<a class="btn" href="<?php echo esc_url( home_url( $home_menu_link ) ); ?>"><?php echo esc_html_e( 'See Menu', 'svr' ); ?></a>
-							<?php } ?>
+						<div class="columns small-12 large-6 box item">
+							<img src="<?php echo esc_url( $home_menu_image['url'] ); ?>" alt="<?php echo $home_menu_image['alt']; ?>">
+							<div class="box-inner">
+								<?php if ( $home_menu_title ){ ?>
+									<h3><?php echo esc_html( $home_menu_title ); ?></h3>	
+								<?php }
+								if ( $home_menu_link ){ ?>
+									<a class="btn" href="<?php echo esc_url( home_url( $home_menu_link ) ); ?>"><?php echo esc_html_e( 'See Menu', 'svr' ); ?></a>
+								<?php } ?>
+							</div>
 						</div>
-					</div>
 
-				<?php } ?>
-
+					<?php } ?>
+					
+				</div>
 			</section>
 
 		<?php }
@@ -531,5 +534,68 @@ function svr_menus_cta(){
 
 		<?php }
 
+	}
+}
+
+
+// MENU PAGE MEALS AND COURSES
+function svr_courses(){
+	if ( function_exists( 'get_field' ) ){
+		$courses = get_field( 'svr_courses' );
+
+		if ( $courses ){ ?>
+
+			<section class="beige section-padding">
+				
+					
+					<?php foreach ( $courses as $course ){
+						$course_title = $course['svr_course_title']; ?>
+						
+						<div class="card-wrapper">
+							<div class="row">
+								<div class="columns small-12">
+									<?php if ( $course_title ){ ?>
+										<p class="card-header"><?php echo esc_html( $course_title ); ?></p>
+									<?php } ?>
+								</div>
+
+								<?php
+								$meals = $course['svr_course_meal'];
+
+								foreach ( $meals as $meal ){
+									$meal_name = $meal['svr_meal_name'];
+									$meal_ing = $meal['svr_meal_ingredients'];
+									$meal_price = $meal['svr_meal_price']; ?>
+
+									<div class="columns small-12">
+										<div class="card">
+											<div class="row">
+												<div class="columns small-12 large-10">
+													<?php if ( $meal_name ){ ?>
+														<h3><?php echo esc_html( $meal_name ); ?></h3>
+													<?php }
+													if ( $meal_ing ){ ?>
+														<p><?php echo esc_html( $meal_ing ); ?></p>
+													<?php } ?>
+												</div>
+												<div class="columns small-12 large-2">
+													<?php if ( $meal_price ){ ?>
+														<h3><?php echo esc_html( $meal_price ); ?></h3>
+													<?php } ?>
+												</div>
+											</div>
+										</div>
+									</div>	
+									
+								<?php } ?>
+							
+							</div>
+						</div>
+
+					<?php } ?>
+
+			</section>
+
+		<?php }
 	}
 }
