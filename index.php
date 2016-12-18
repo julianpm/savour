@@ -21,36 +21,41 @@ get_header(); ?>
 		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
+
+				<header class="page-header-simple section-padding">
+					<p class="italic"><?php echo esc_html_e( 'Read our', 'svr' ); ?></p>
 					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+					<div class="border"></div>
 				</header>
 
 			<?php
-			endif;
+			endif; ?>
 
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+			<div class="row">
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+				<?php
+				/* Start the Loop */
+				while ( have_posts() ) : the_post(); ?>
+					
+					<div class="columns small-12 large-4">
 
-			endwhile;
+						<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
 
-			the_posts_navigation();
+					</div>
 
-		else :
+				<?php
+				endwhile;
 
-			get_template_part( 'template-parts/content', 'none' );
+				#the_posts_navigation(); ?> 
 
+			</div>
+		
+		<?php
 		endif; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+
 get_footer();
