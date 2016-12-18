@@ -4,6 +4,7 @@ jQuery(document).ready(function($){
 	$('.search a').click(function(event){
 		event.preventDefault();
 		$('#searchform').slideToggle();
+		$(this).toggleClass('active');
 		$(this).children( 'i' ).toggleClass('fa-search fa-times');
 	});
 
@@ -15,11 +16,7 @@ jQuery(document).ready(function($){
         });
 	});
 
-	// PAGE NAVIGATION SCROLL
-  	$('.our-menus a').click(function(){
-    	var $link = $(this).attr('href');
-      	$("html, body").animate({ scrollTop: $($link).offset().top }, 600);
-      	return false;
-  	});
+	// PAGE NAVIGATION SMOOTHSCROLL
+  	$('.our-menus a').smoothScroll();
 
 });
