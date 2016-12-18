@@ -320,7 +320,7 @@ function svr_welcome(){
 
 					<?php } ?>
 					<div class="columns small-12 welcome_link">
-						<a class="btn btn_dark" href="#"><?php echo esc_html_e( 'Read Our Mission', 'svr' ); ?></a>
+						<a class="btn btn_dark" href="<?php echo esc_url( home_url( '/about' ) ); ?>"><?php echo esc_html_e( 'Read Our Mission', 'svr' ); ?></a>
 					</div>
 				</div>
 			</section>
@@ -596,6 +596,39 @@ function svr_courses(){
 
 					<?php } ?>
 
+			</section>
+
+		<?php }
+	}
+}
+
+
+// MENU PAGE COME SIT CTA
+function svr_come_sit_cta(){
+	if ( function_exists( 'get_field' ) ){
+		$come_sit_header = get_field( 'svr_come_sit_cta_header', 'options');
+		$come_sit_text = get_field( 'svr_come_sit_cta_text', 'options');
+		$come_sit_link = get_field( 'svr_come_sit_cta_link', 'options');
+
+		if ( $come_sit_link ){ ?>
+		
+			<section class="darkgrey section-padding cta">
+				<div class="row">
+					<div class="columns small-12">
+						<?php if ( $come_sit_header ){ ?>
+							<p><?php echo esc_html( $come_sit_header ); ?></p>
+						<?php }
+						if ( $come_sit_text ){ ?>
+							<h3><?php echo esc_html( $come_sit_text ); ?></h3>
+						<?php } ?>
+						<div class="cta-link">
+							<a class="btn btn_grey" href="<?php echo esc_url( $come_sit_link ); ?>">
+								<?php echo esc_html_e( 'Make A Reservation', 'svr' ); ?>
+							</a>
+						</div>
+					</div>
+				</div>	
+			
 			</section>
 
 		<?php }
