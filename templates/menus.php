@@ -18,6 +18,9 @@ get_header(); ?>
 				// PAGE HEADER
 				svr_page_header();
 
+				// FOOD COURSES
+				svr_courses();
+
 				// MENUS CTA
 				svr_menus_cta();
 
