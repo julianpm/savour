@@ -35,6 +35,13 @@
 			&:last-of-type{
 				width: auto;
 			}
+			&.search{
+				a{
+					&.active{
+						color:$main_grey;
+					}
+				}
+			}
 		}
 	}
 }
