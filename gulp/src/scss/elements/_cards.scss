@@ -1,14 +1,27 @@
+.card-wrapper{
+	margin-bottom:60px;
+	&:last-of-type{
+		margin-bottom: 0;
+	}
+}
+
 .card-header{
 	text-align: center;
 	text-transform: uppercase;
 	font-family:'Work Sans', sans-serif;
 	font-weight: bold;
 	margin-bottom:20px;
+	.page-template-menus &{
+		background: white;
+		margin:0;
+		padding:30px 0;
+	}
 }
+
 .card{
-	border:1px solid #e1e1e1;
 	text-align: center;
 	padding:40px;
+	border:1px solid #e1e1e1;
 	i{
 		color:$light_grey;
 		@include font-size(40);
@@ -23,5 +36,22 @@
 		color:$main_grey;
 		font-family:'Work Sans', sans-serif;
 		margin-bottom:10px;
+	}
+	.page-template-menus &{
+		background: white;
+		text-align: left;
+		border:none;
+		border-top:1px solid #e1e1e1;
+		h3{
+			text-transform: uppercase;
+		}
+		.large-2{
+			text-align: center;
+			h3{
+				background: $secondary_grey;
+				padding:15px 25px;
+				display: inline-block;
+			}
+		}
 	}
 }
