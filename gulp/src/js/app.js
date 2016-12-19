@@ -16,6 +16,13 @@ jQuery(document).ready(function($){
         });
 	});
 
+	$('.flyout-close').click(function(event){
+        $('.flyout-nav').animate({
+            right:-400
+        }, 500, function(){
+        });
+    });
+
 	// PAGE NAVIGATION SMOOTHSCROLL
   	$('.our-menus a').smoothScroll();
 
