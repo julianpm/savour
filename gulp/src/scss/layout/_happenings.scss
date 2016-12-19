@@ -1,3 +1,33 @@
+.upcoming-events{
+	text-align: center;
+	@include breakpoint(large){
+		text-align: left;
+	}
+	h3{
+		text-transform: uppercase;
+	}
+	.large-3{
+		@include breakpoint(large){
+			text-align: center;
+		}
+		h3{
+			background: white;
+			padding:10px;
+			display: inline-block;
+			margin-bottom:10px;
+			@include breakpoint(large){
+				margin-bottom: 0;
+			}
+		}
+	}
+	.large-9{
+		margin-bottom:30px;
+		@include breakpoint(large){
+			margin-bottom:0;
+		}
+	}
+}
+
 .happenings-post-query{
 	text-align: center;
 	.row{
