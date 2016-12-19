@@ -151,3 +151,15 @@ if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page('CTA Options');
 
 }
+
+
+/**
+ * Filter the except length to 20 characters.
+ * TO GO IN FUNCTIONS.PHP
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+ */
+function sas_excerpt_length( $length ) {
+    return 15;
+}
+add_filter( 'excerpt_length', 'sas_excerpt_length', 999 );
