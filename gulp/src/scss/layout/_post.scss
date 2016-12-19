@@ -28,26 +28,47 @@
 
 .single-post{
 	.post{
-		padding:40px;
+		padding:20px;
+		@include breakpoint(large){
+			padding:40px;
+		}
 		.entry-header{
 			background: white;
-			padding:0 0 40px 0;
+			padding:0 0 20px 0;
+			@include breakpoint(large){
+				padding:0 0 40px 0;
+			}
 			.entry-title{
-				@include font-size(40);
+				@include font-size(30);
+				@include breakpoint(large){
+					@include font-size(40);
+				}
 				color:$main_grey;
 			}
 		}
 		.entry-content{
 			border:none;
 			text-align: left;
-			padding:40px 70px 0 70px;
+			@include breakpoint(large){
+				padding:40px 70px 0 70px;
+			}
 		}
 	}
 	.entry-footer{
-		display: flex;
-		align-items:center;
-		justify-content: space-between;
+		@include breakpoint(large){
+			display: flex;
+			align-items:center;
+			justify-content: space-between;
+		}
+		padding:20px 40px;
+		@include breakpoint(large){
+			padding:30px 110px;
+		}
 		.post-navigation{
+			margin-top:30px;
+			@include breakpoint(large){
+				margin:0;
+			}
 			.nav-links{
 				display: flex;
 				div{
