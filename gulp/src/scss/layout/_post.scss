@@ -3,46 +3,70 @@
 }
 
 .post{
-	.single-post &{
-		padding:40px;
-	}
+	text-align: center;
 	.entry-header{
-		text-align: center;
-		.single-post &{
-			margin-bottom: 30px;
-		}
-		.blog &, .category &{
-			background: $secondary_grey;
-			padding:20px 0;
-		}
+		background: $secondary_grey;
+		padding:20px;
 		.entry-title{
-			color:$main_grey;
+			@include font-size(20);
 			text-transform: uppercase;
-			@include font-size(40);
-			.blog &, .category &{
-				@include font-size(20);
-				margin-bottom:5px;
-			}
 			a{
 				text-decoration: none;
 				color:$main_grey;
 			}
 		}
 		p{
-			margin: 0;
+			margin:5px 0 0 0;
 		}
 	}
 	.entry-content{
-		.single-post &{
-			padding:50px 70px 0 70px;
+		border:1px solid $secondary_grey;
+		border-top:none;
+		padding:20px;
+	}
+}
+
+.single-post{
+	.post{
+		padding:40px;
+		.entry-header{
+			background: white;
+			padding:0 0 40px 0;
+			.entry-title{
+				@include font-size(40);
+				color:$main_grey;
+			}
 		}
-		.blog &, .category &{
-			text-align: center;
-			border:1px solid $secondary_grey;
-			border-top:none;
-			padding:30px 20px; 
-			p{
-				margin:0;
+		.entry-content{
+			border:none;
+			text-align: left;
+			padding:40px 70px 0 70px;
+		}
+	}
+	.entry-footer{
+		display: flex;
+		align-items:center;
+		justify-content: space-between;
+		.post-navigation{
+			.nav-links{
+				display: flex;
+				div{
+					margin-left:20px;
+					&:first-of-type{
+						margin-left:0;
+					}
+				}
+				a{
+					text-decoration: none;
+					color:$secondary_grey;
+					border:1px solid $secondary_grey;
+					padding:10px;
+					transition:0.5s;
+					&:hover{
+						background: $secondary_grey;
+						color:white;
+					}
+				}
 			}
 		}
 	}
