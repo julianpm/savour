@@ -95,6 +95,33 @@ add_action( 'edit_category', 'svr_category_transient_flusher' );
 add_action( 'save_post',     'svr_category_transient_flusher' );
 
 
+/**
+ * Display navigation to next/previous post when applicable.
+ * CUSTOM SINGLE-POST NAVIGATION
+ * TO GO IN TEMPLATE TAGS
+ */
+function svr_post_navigation() {
+	// Don't print empty markup if there's nowhere to navigate.
+	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
+	$next     = get_adjacent_post( false, '', false );
+	if ( ! $next && ! $previous ) {
+		return;
+	}
+	?>
+
+	<nav class="navigation post-navigation" role="navigation">
+		<div class="nav-links">
+			<?php
+				previous_post_link( '<div class="nav-previous">%link</div>', 'Previous Post' );
+				next_post_link( '<div class="nav-next">%link</div>', 'Next Post' );
+			?>
+		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+
+	<?php
+}
+
+
 // PAGE HEADER
 function svr_page_header(){
 	$header_subtitle = get_field( 'svr_page_header_subtitle' );
