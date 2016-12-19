@@ -1,7 +1,7 @@
 jQuery(document).ready(function($){
 
 	// SEARCH CLICK FUNCTION
-	$('.search a').click(function(event){
+	$('.search-toggle a').click(function(event){
 		event.preventDefault();
 		$('#searchform').slideToggle();
 		$(this).toggleClass('active');

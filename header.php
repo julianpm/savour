@@ -53,7 +53,7 @@
 									<a href="<?php echo esc_url( $instagram ); ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a>
 								</li>
 							<?php } ?>
-							<li class="search">
+							<li class="search-toggle">
 								<a href="#">
 									<i class="fa fa-search" aria-hidden="true"></i>
 								</a>
