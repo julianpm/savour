@@ -634,3 +634,43 @@ function svr_come_sit_cta(){
 		<?php }
 	}
 }
+
+
+// HAPPENINGS PAGE UPCOMING EVENTS
+function svr_upcoming_events(){
+	if ( function_exists( 'get_field' ) ){
+		$upcoming_events = get_field( 'svr_upcoming_events' );
+
+		if ( $upcoming_events ){ ?>
+
+			<section class="beige section-padding upcoming-events">
+				<div class="row">
+					<p class="card-header"><?php echo esc_html_e( 'Upcoming Events', 'svr' ); ?></p>
+					
+					<?php foreach ( $upcoming_events as $upcoming_event ){
+						$upcoming_event_date = $upcoming_event['svr_upcoming_events_date'];
+						$upcoming_event_title = $upcoming_event['svr_upcoming_events_title']; ?>
+
+						<div class="columns small-12 large-6">
+							<div class="row">
+								<?php if ( $upcoming_event_date ){ ?>
+									<div class="columns small-12 large-3">
+										<h3><?php echo esc_html( $upcoming_event_date ); ?></h3>
+									</div>
+								<?php } ?>
+								<?php if ( $upcoming_event_title ){ ?>
+									<div class="columns small-12 large-9">
+										<h3><?php echo esc_html( $upcoming_event_title ); ?></h3>
+									</div>
+								<?php } ?>
+							</div>
+						</div>
+
+					<?php } ?>
+
+				</div>
+			</section>
+
+		<?php }
+	}
+}

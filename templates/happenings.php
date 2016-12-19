@@ -18,6 +18,9 @@ get_header(); ?>
 				// PAGE HEADER
 				svr_page_header();
 
+				// UPCOMING EVENTS
+				svr_upcoming_events();
+
 				// the query
 				$args = array(
 					'posts_per_page'	=> 3,
