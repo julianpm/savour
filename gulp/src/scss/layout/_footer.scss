@@ -12,6 +12,9 @@
 .top-footer{
 	text-align: center;
 	padding:50px 0;
+	.blog &, .category &{
+		border-top:1px solid $secondary_grey;
+	}
 	h2{
 		color:$text_grey;
 	}
