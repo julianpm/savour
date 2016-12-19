@@ -45,6 +45,7 @@
 		</div><!-- .entry-content -->
 	</article><!-- #post-## -->
 	<div class="entry-footer">
-		<?php svr_entry_footer(); ?>
+		<?php svr_entry_footer();
+		svr_post_navigation(); ?>
 	</div>
 </div>
