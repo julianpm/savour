@@ -1,21 +1,99 @@
-.single-post{
-	.post{
-		background: white;
+.single-post-wrapper{
+	background: white;	
+}
+
+.post{
+	.single-post &{
 		padding:40px;
-		.entry-header{
-			text-align: center;
-			margin-bottom:30px;
-			h1{
-				color:$main_grey;
-				text-transform: uppercase;
-				@include font-size(40);
+	}
+	.entry-header{
+		text-align: center;
+		.single-post &{
+			margin-bottom: 30px;
+		}
+		.blog &, .category &{
+			background: $secondary_grey;
+			padding:20px 0;
+		}
+		.entry-title{
+			color:$main_grey;
+			text-transform: uppercase;
+			@include font-size(40);
+			.blog &, .category &{
+				@include font-size(20);
+				margin-bottom:5px;
 			}
-			p{
-				margin: 0;
+			a{
+				text-decoration: none;
+				color:$main_grey;
 			}
 		}
-		.entry-content{
-			padding:50px 70px;
+		p{
+			margin: 0;
+		}
+	}
+	.entry-content{
+		.single-post &{
+			padding:50px 70px 0 70px;
+		}
+		.blog &, .category &{
+			text-align: center;
+			border:1px solid $secondary_grey;
+			border-top:none;
+			padding:30px 20px; 
+			p{
+				margin:0;
+			}
+		}
+	}
+}
+
+.blog{
+	.row{
+		display: flex;
+		flex-wrap:wrap;
+	}
+}
+
+.entry-footer{
+	border-top:1px solid $secondary_grey;
+	padding:30px 110px;
+	.cat-links{
+		text-transform: uppercase;
+		color:$secondary_grey;
+		a{
+			font-family:'Lora', serif;
+			color:$text_grey;
+			text-decoration: none;
+			font-style: italic;
+			text-transform: none;
+			margin-left:20px;
+		}
+	}
+}
+
+.posts-navigation{
+	margin-top:40px;
+	.screen-reader-text{
+		display: none;
+	}
+	.nav-links{
+		text-align: center;
+		a{
+			text-decoration: none;
+			text-transform: uppercase;
+			padding:15px 20px;
+			font-weight: bold;
+			text-align: center;
+			transition:0.5s;
+			background: $main_grey;
+			color:white;
+			border:2px solid transparent;
+			&:hover{
+				background: white;
+				color:$main_grey;
+				border:2px solid $main_grey;
+			}
 		}
 	}
 }
