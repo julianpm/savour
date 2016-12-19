@@ -29,7 +29,8 @@ get_header(); ?>
 				<?php if ( $recent_posts->have_posts() ) : ?>
 
 					<!-- pagination here -->
-					<section class="section-padding">
+					<section class="happenings-post-query section-padding">
+						<p class="card-header"><?php echo esc_html_e( 'Recent Stories', 'svr' ); ?></p>
 						<div class="row">
 
 							<!-- the loop -->
@@ -46,6 +47,9 @@ get_header(); ?>
 
 						<!-- pagination here -->
 						</div>
+						<a class="btn btn_dark" href="<?php echo esc_url( home_url( '/journal' ) ); ?>">
+							<?php echo esc_html_e( 'See All Posts', 'svr' ); ?>
+						</a>
 					</section>
 
 					<?php wp_reset_postdata(); ?>
