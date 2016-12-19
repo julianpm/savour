@@ -9,7 +9,10 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'item' ); ?>>
+	<a href="<?php echo esc_url( get_permalink() ); ?>">
+		<?php the_post_thumbnail(); ?>
+	</a>
 	<header class="entry-header">
 		<?php
 		if ( is_single() ) :
@@ -28,5 +31,6 @@
 
 	<div class="entry-content">
 		<?php the_excerpt(); ?>
+		<div class="border"></div>
 	</div><!-- .entry-content -->
 </article><!-- #post-## -->
