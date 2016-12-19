@@ -14,7 +14,7 @@ if ( ! function_exists( 'svr_posted_on' ) ) :
 function svr_posted_on() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 	}
 
 	$time_string = sprintf( $time_string,
@@ -25,8 +25,8 @@ function svr_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', 'svr' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		// esc_html_x( 'Posted on %s', 'post date', 'svr' ),
+		'<p>' . $time_string . '</p>'
 	);
 
 	echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
