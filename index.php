@@ -31,24 +31,28 @@ get_header(); ?>
 			<?php
 			endif; ?>
 
-			<div class="row">
+			<section class="section-padding">
+				<div class="row">
 
-				<?php
-				/* Start the Loop */
-				while ( have_posts() ) : the_post(); ?>
-					
-					<div class="columns small-12 large-4">
+					<?php
+					/* Start the Loop */
+					while ( have_posts() ) : the_post(); ?>
+						
+						<div class="columns small-12 large-4">
 
-						<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+							<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
 
+						</div>
+
+					<?php
+					endwhile; ?>
+
+					<div class="columns small-12">
+						<?php the_posts_navigation(); ?>
 					</div>
 
-				<?php
-				endwhile;
-
-				#the_posts_navigation(); ?> 
-
-			</div>
+				</div>
+			</section>
 		
 		<?php
 		endif; ?>
