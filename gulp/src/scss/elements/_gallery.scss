@@ -1,0 +1,36 @@
+.gallery{
+	@include breakpoint(large){
+		display: flex;
+	}
+	a{
+		position:relative;
+		.overlay{
+			display: none;
+			position:absolute;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			background: rgba(0,0,0,0.5);
+		}
+		i{
+			display: none;
+			position:absolute;
+			top:90px;
+			left:140px;
+			color:white;
+			background: rgba(0,0,0,0.8);
+			padding:10px;
+			z-index:99999;
+			@include font-size(24);
+		}
+		&:hover{
+			.overlay{
+				display: block;
+			}
+			i{
+				display: block;
+			}
+		}
+	}
+}
