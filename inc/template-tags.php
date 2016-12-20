@@ -419,6 +419,7 @@ function svr_values(){
 								if ( $value_text ){
 									echo wp_kses_post( $value_text );	
 								} ?>
+								<div class="border"></div>
 							</div>
 						</div>
 
@@ -426,6 +427,33 @@ function svr_values(){
 
 				</div>
 			</section>
+
+		<?php }
+	}
+}
+
+
+// ABOUT PAGE GALLERY
+function svr_gallery(){
+	if ( function_exists( 'get_field' ) ){
+		$images = get_field( 'svr_gallery' );
+
+
+		if( $images ){ ?>
+
+		    <section class="gallery">
+
+		        <?php foreach( $images as $image ){ ?>
+
+	                <a href="<?php echo $image['url']; ?>" data-lightbox="gallery-item">
+	                     <img src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>" />
+						<i class="fa fa-search-plus" aria-hidden="true"></i>
+						<span class="overlay"></span>
+	                </a>
+
+		        <?php } ?>
+
+		    </section>
 
 		<?php }
 	}

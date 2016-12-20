@@ -21,6 +21,9 @@ get_header(); ?>
 				// VALUES
 				svr_values();
 
+				// GALLERY
+				svr_gallery();
+
 				// OUR TEAM
 				svr_team();
 
