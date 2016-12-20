@@ -1,9 +1,11 @@
 .gallery{
 	@include breakpoint(large){
 		display: flex;
+		flex-wrap:wrap;
 	}
 	a{
 		position:relative;
+		width: 25%;
 		.overlay{
 			display: none;
 			position:absolute;
