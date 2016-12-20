@@ -1,0 +1,21 @@
+.search{
+	.post{
+		text-align: left;
+		.entry-header{
+			background: white;
+			padding:0;
+		}
+		p{
+			margin:10px 0 0 0;
+		}
+	}
+	.page{
+		.entry-title{
+			@include font-size(20);
+			a{
+				color:$main_grey;
+				text-decoration: none;
+			}
+		}
+	}
+}
