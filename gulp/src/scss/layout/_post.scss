@@ -2,6 +2,11 @@
 	background: white;	
 }
 
+.journal{
+	display: flex;
+	flex-wrap:wrap;
+}
+
 .post{
 	text-align: center;
 	.entry-header{
@@ -90,13 +95,6 @@
 				}
 			}
 		}
-	}
-}
-
-.blog{
-	.row{
-		display: flex;
-		flex-wrap:wrap;
 	}
 }
 

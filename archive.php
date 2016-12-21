@@ -23,7 +23,7 @@ get_header(); ?>
 				<div class="border"></div>
 			</header><!-- .page-header -->
 
-			<div class="row section-padding">
+			<div class="row journal section-padding">
 				
 				<?php
 				/* Start the Loop */

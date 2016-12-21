@@ -34,7 +34,7 @@ get_header(); ?>
 					<!-- pagination here -->
 					<section class="happenings-post-query section-padding">
 						<p class="card-header"><?php echo esc_html_e( 'Recent Stories', 'svr' ); ?></p>
-						<div class="row">
+						<div class="row journal">
 
 							<!-- the loop -->
 							<?php while ( $recent_posts->have_posts() ) : $recent_posts->the_post(); ?>

@@ -32,7 +32,7 @@ get_header(); ?>
 			endif; ?>
 
 			<section class="section-padding">
-				<div class="row">
+				<div class="row journal">
 
 					<?php
 					/* Start the Loop */
