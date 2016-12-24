@@ -38,6 +38,9 @@ p{
 	.top-footer &, &.form-header, .team-header &{
 		font-family:'Work Sans', sans-serif;
 	}
+	.error404 &{
+		text-align: center;
+	}
 }
 .italic{
 	font-style:italic;
