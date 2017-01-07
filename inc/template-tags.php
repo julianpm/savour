@@ -307,9 +307,14 @@ function svr_welcome(){
 				<?php
 				$welcome_header = get_field( 'svr_front_page_welcome_header' ); ?>
 				<div class="row">
-					<div class="columns small-12">
-						<h2><?php echo esc_html( $welcome_header ); ?></h2>
-					</div>
+
+					<?php if ( $welcome_header ){ ?>
+
+						<div class="columns small-12">
+							<h2><?php echo esc_html( $welcome_header ); ?></h2>
+						</div>
+
+					<?php } ?>
 
 					<?php foreach ( $welcome as $welcome_item ){
 						$welcome_info = $welcome_item['svr_front_page_welcome_repeater_info']; ?>
