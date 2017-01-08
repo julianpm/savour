@@ -115,28 +115,15 @@
 	}
 }
 
-.posts-navigation{
-	margin-top:40px;
-	.screen-reader-text{
-		display: none;
+.paginate_navigation{
+	text-align: center;
+	margin-top:20px;
+	a{
+		color:$text_grey;
 	}
-	.nav-links{
-		text-align: center;
-		a{
-			text-decoration: none;
-			text-transform: uppercase;
-			padding:15px 20px;
-			font-weight: bold;
-			text-align: center;
-			transition:0.5s;
-			background: $main_grey;
-			color:white;
-			border:2px solid transparent;
-			&:hover{
-				background: white;
-				color:$main_grey;
-				border:2px solid $main_grey;
-			}
-		}
+	.page-numbers{
+		text-transform: uppercase;
+		text-decoration: none;
+		margin:0 10px;
 	}
 }

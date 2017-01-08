@@ -48,7 +48,7 @@ get_header(); ?>
 					endwhile; ?>
 
 					<div class="columns small-12">
-						<?php the_posts_navigation(); ?>
+						<?php svr_pagination_links(); ?>
 					</div>
 
 				</div>

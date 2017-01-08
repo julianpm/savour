@@ -122,6 +122,21 @@ function svr_post_navigation() {
 }
 
 
+// POST NAVIGATION PAGINATION
+if ( ! function_exists( 'pso_pagination_links' ) ) :
+/**
+ * Creates the pagination links
+ */
+function svr_pagination_links() {
+	$args = array(
+	   'prev_text' => '<i class="fa fa-chevron-left" aria-hidden="true"></i> prev page',
+	   'next_text' => 'next page <i class="fa fa-chevron-right" aria-hidden="true"></i>',
+	);
+	echo '<nav class="paginate_navigation">'. paginate_links( $args ) . '</nav>';
+}
+endif;
+
+
 // PAGE HEADER
 function svr_page_header(){
 	$header_subtitle = get_field( 'svr_page_header_subtitle' );
