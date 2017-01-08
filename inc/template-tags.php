@@ -394,7 +394,7 @@ function svr_contact(){
 				<div class="row">
 					<div class="columns small-12">
 						<p class="form-header"><?php echo esc_html( $contact_form_header ); ?></p>
-						<?php echo do_shortcode( '[contact-form-7 id="85" title="Contact Form"]' ); ?>
+						<?php echo do_shortcode( '[contact-form-7 id="113" title="Contact Form"]' ); ?>
 					</div>
 				</div>
 			</section>
@@ -450,7 +450,6 @@ function svr_values(){
 function svr_gallery(){
 	if ( function_exists( 'get_field' ) ){
 		$images = get_field( 'svr_gallery' );
-
 
 		if( $images ){ ?>
 
@@ -590,52 +589,51 @@ function svr_courses(){
 
 			<section class="beige section-padding">
 				
+				<?php foreach ( $courses as $course ){
+					$course_title = $course['svr_course_title']; ?>
 					
-					<?php foreach ( $courses as $course ){
-						$course_title = $course['svr_course_title']; ?>
-						
-						<div class="card-wrapper">
-							<div class="row">
+					<div class="card-wrapper">
+						<div class="row">
+							<div class="columns small-12">
+								<?php if ( $course_title ){ ?>
+									<p class="card-header"><?php echo esc_html( $course_title ); ?></p>
+								<?php } ?>
+							</div>
+
+							<?php
+							$meals = $course['svr_course_meal'];
+
+							foreach ( $meals as $meal ){
+								$meal_name = $meal['svr_meal_name'];
+								$meal_ing = $meal['svr_meal_ingredients'];
+								$meal_price = $meal['svr_meal_price']; ?>
+
 								<div class="columns small-12">
-									<?php if ( $course_title ){ ?>
-										<p class="card-header"><?php echo esc_html( $course_title ); ?></p>
-									<?php } ?>
-								</div>
-
-								<?php
-								$meals = $course['svr_course_meal'];
-
-								foreach ( $meals as $meal ){
-									$meal_name = $meal['svr_meal_name'];
-									$meal_ing = $meal['svr_meal_ingredients'];
-									$meal_price = $meal['svr_meal_price']; ?>
-
-									<div class="columns small-12">
-										<div class="card">
-											<div class="row">
-												<div class="columns small-12 large-10">
-													<?php if ( $meal_name ){ ?>
-														<h3><?php echo esc_html( $meal_name ); ?></h3>
-													<?php }
-													if ( $meal_ing ){ ?>
-														<p><?php echo esc_html( $meal_ing ); ?></p>
-													<?php } ?>
-												</div>
-												<div class="columns small-12 large-2">
-													<?php if ( $meal_price ){ ?>
-														<h3><?php echo esc_html( $meal_price ); ?></h3>
-													<?php } ?>
-												</div>
+									<div class="card">
+										<div class="row">
+											<div class="columns small-12 large-10">
+												<?php if ( $meal_name ){ ?>
+													<h3><?php echo esc_html( $meal_name ); ?></h3>
+												<?php }
+												if ( $meal_ing ){ ?>
+													<p><?php echo esc_html( $meal_ing ); ?></p>
+												<?php } ?>
+											</div>
+											<div class="columns small-12 large-2">
+												<?php if ( $meal_price ){ ?>
+													<h3><?php echo esc_html( $meal_price ); ?></h3>
+												<?php } ?>
 											</div>
 										</div>
-									</div>	
-									
-								<?php } ?>
-							
-							</div>
+									</div>
+								</div>	
+								
+							<?php } ?>
+						
 						</div>
+					</div>
 
-					<?php } ?>
+				<?php } ?>
 
 			</section>
 
