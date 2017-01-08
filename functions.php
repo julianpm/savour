@@ -149,6 +149,7 @@ if( function_exists('acf_add_options_page') ) {
 
 	acf_add_options_page('Theme Options');
 	acf_add_options_page('CTA Options');
+	acf_add_options_page('Social Media Options');
 
 }
 
