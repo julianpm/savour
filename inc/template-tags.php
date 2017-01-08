@@ -169,7 +169,7 @@ function svr_page_header(){
 // HOURS OF OPERATION CTA
 function svr_hours_cta(){
 	if ( function_exists( 'get_field' ) ){
-		$hours = get_field( 'svr_front_page_hours', 'options' );
+		$hours = get_field( 'svr_hours', 'options' );
 
 		if ( $hours ){ ?>
 
@@ -178,8 +178,8 @@ function svr_hours_cta(){
 					<p class="card-header"><?php echo esc_html_e( 'Hours of Operation', 'svr' ); ?></p>
 
 					<?php foreach ( $hours as $hour ){
-						$hours_days = $hour['svr_front_page_hours_days']; 
-						$hours_times = $hour['svr_front_page_hours_times']; ?>
+						$hours_days = $hour['svr_hours_days']; 
+						$hours_times = $hour['svr_hours_times']; ?>
 
 						<div class="columns small-12 large-4">
 							<div class="card item">
@@ -346,26 +346,34 @@ function svr_home_menus_cta(){
 				<div class="row">
 					<p class="card-header"><?php echo esc_html_e( 'Our Menus', 'svr' ); ?></p>
 
-					<?php foreach ( $home_menus as $home_menu ){
-						$home_menu_image = $home_menu['svr_front_page_menus_image'];
-						$home_menu_title = $home_menu['svr_front_page_menus_title'];
-						$home_menu_link = $home_menu['svr_front_page_menus_link']; ?>
+					<div class="row-flex">
 
-						<div class="columns small-12 large-6">
-							<div class="box item">
-								<img src="<?php echo esc_url( $home_menu_image['url'] ); ?>" alt="<?php echo $home_menu_image['alt']; ?>">
-								<div class="box-inner">
-									<?php if ( $home_menu_title ){ ?>
-										<h3><?php echo esc_html( $home_menu_title ); ?></h3>	
-									<?php }
-									if ( $home_menu_link ){ ?>
-										<a class="btn" href="<?php echo esc_url( home_url( $home_menu_link ) ); ?>"><?php echo esc_html_e( 'See Menu', 'svr' ); ?></a>
-									<?php } ?>
+						<?php foreach ( $home_menus as $home_menu ){
+							$home_menu_image = $home_menu['svr_front_page_menus_image'];
+							$home_menu_title = $home_menu['svr_front_page_menus_title'];
+							$home_menu_link = $home_menu['svr_front_page_menus_link'];
+
+							if ( $home_menu_image ){ ?>
+
+								<div class="columns small-12 large-6">
+									<div class="box item">
+										<img src="<?php echo esc_url( $home_menu_image['url'] ); ?>" alt="<?php echo $home_menu_image['alt']; ?>">
+										<div class="box-inner">
+											<?php if ( $home_menu_title ){ ?>
+												<h3><?php echo esc_html( $home_menu_title ); ?></h3>	
+											<?php }
+											if ( $home_menu_link ){ ?>
+												<a class="btn" href="<?php echo esc_url( home_url( $home_menu_link ) ); ?>"><?php echo esc_html_e( 'See Menu', 'svr' ); ?></a>
+											<?php } ?>
+										</div>
+									</div>
 								</div>
-							</div>
-						</div>
 
-					<?php } ?>
+							<?php }
+
+						} ?>
+
+					</div>
 					
 				</div>
 			</section>
