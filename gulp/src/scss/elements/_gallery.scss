@@ -1,11 +1,15 @@
 .gallery{
-	@include breakpoint(large){
 		display: flex;
 		flex-wrap:wrap;
-	}
 	a{
 		position:relative;
-		width: 25%;
+		width: 100%;
+		@include breakpoint(medium){
+			width: 50%;
+		}
+		@include breakpoint(large){
+			width: 25%;
+		}
 		.overlay{
 			display: none;
 			position:absolute;
@@ -18,8 +22,8 @@
 		i{
 			display: none;
 			position:absolute;
-			top:90px;
-			left:140px;
+			top:40%;
+			left:45%;
 			color:white;
 			background: rgba(0,0,0,0.8);
 			padding:10px;
