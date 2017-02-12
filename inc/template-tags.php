@@ -268,7 +268,7 @@ function svr_subscribe_cta(){
 							<h3><?php echo esc_html( $subscribe_text ); ?></h3>
 						<?php } ?>
 						<div class="cta-link">
-							<a class="btn btn_grey" href="<?php echo esc_url( $subscribe_link ); ?>">
+							<a class="btn btn_grey" href="<?php echo esc_url( home_url( '/contact' ) ); ?>">
 								<?php echo esc_html_e( 'Subscribe', 'svr' ); ?>
 							</a>
 						</div>
@@ -370,7 +370,7 @@ function svr_home_menus_cta(){
 
 							if ( $home_menu_image ){ ?>
 
-								<div class="columns small-12 large-6">
+								<div class="columns small-12 medium-6 large-6">
 									<div class="box item">
 										<img src="<?php echo esc_url( $home_menu_image['url'] ); ?>" alt="<?php echo $home_menu_image['alt']; ?>">
 										<div class="box-inner">
@@ -495,8 +495,8 @@ function svr_team(){
 		if ( $team ){ ?>
 
 			<section class="beige section-padding">
+				<p class="card-header"><?php echo esc_html_e( 'Meet Our Team', 'svr' ); ?></p>
 				<div class="row">
-					<p class="card-header"><?php echo esc_html_e( 'Meet Our Team', 'svr' ); ?></p>
 					
 					<?php foreach ( $team as $team_member ){
 						$team_image = $team_member['svr_team_image'];
@@ -504,7 +504,7 @@ function svr_team(){
 						$team_title = $team_member['svr_team_title'];
 						$team_info = $team_member['svr_team_info']; ?>
 
-						<div class="columns small-12 large-3">
+						<div class="columns small-12 medium-6 large-3">
 							<div class="item">
 								<?php if ( $team_image ){ ?>
 									<img src="<?php echo esc_url( $team_image['url'] ); ?>" alt="<?php echo $team_image['alt']; ?>">
@@ -676,7 +676,7 @@ function svr_come_sit_cta(){
 							<h3><?php echo esc_html( $come_sit_text ); ?></h3>
 						<?php } ?>
 						<div class="cta-link">
-							<a class="btn btn_grey" href="<?php echo esc_url( $come_sit_link ); ?>">
+							<a class="btn btn_grey" href="<?php echo esc_url( home_url( '/contact' ) ); ?>">
 								<?php echo esc_html_e( 'Make A Reservation', 'svr' ); ?>
 							</a>
 						</div>
