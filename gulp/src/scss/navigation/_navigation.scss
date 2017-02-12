@@ -20,10 +20,18 @@
 }
 
 .social-nav{
+	margin:0 auto;
+	@include breakpoint(large){
+		margin:0;
+	}
 	ul{
 		margin:0;
 		padding:0;
 		list-style: none;
+		text-align: center;
+		@include breakpoint(large){
+			text-align: left;
+		}
 		li{
 			margin-left:10px;
 			display: inline-block;
@@ -34,6 +42,10 @@
 			}
 			&:last-of-type{
 				width: auto;
+				margin-top:5px;
+				@include breakpoint(large){
+					margin-top:0;
+				}
 			}
 			&.search{
 				a{
