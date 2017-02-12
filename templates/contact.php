@@ -24,9 +24,6 @@ get_header(); ?>
 				// CONTACT FORM
 				svr_contact();
 
-				// JOIN US CTA
-				svr_join_us_cta();
-
 			endwhile; // End of the loop.
 			?>
 
