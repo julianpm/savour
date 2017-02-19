@@ -25,7 +25,7 @@
 				<div class="row">
 					<div class="columns small-12">
 						<div class="bottom-footer">
-							<p><?php echo esc_html_e( 'Copyright 2016 - Savour', 'svr' ); ?></p>
+							<p>© <?php echo date( 'Y' ); ?> - <?php echo esc_html_e( 'Savour', 'svr' ); ?></p>
 							<nav class="social-nav">
 								<?php
 								$facebook = get_field( 'svr_facebook_link', 'options');
