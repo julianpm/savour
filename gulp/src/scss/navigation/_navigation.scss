@@ -11,11 +11,15 @@
 }
 
 .top-nav-wrapper{
+	display: none;
 	border-bottom:1px solid #e1e1e1;
 	padding:10px 0;
 	.columns{
 		display: flex;
 		justify-content:flex-end;
+	}
+	@include breakpoint(large){
+		display: block;
 	}
 }
 
